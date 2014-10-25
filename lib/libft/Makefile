@@ -41,7 +41,6 @@ ${NAME}:
 	@echo Compilation of libft
 	@$(CC) $(FLAGS) -I./includes/ -c $(SRCS)
 	@ar rc $(NAME) $(OBJ:.c=.o)
-	@echo Libft compilation done
 
 clean:
 	@echo Deleting libft .o files
