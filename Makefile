@@ -1,7 +1,8 @@
 SERVER_NAME = server
 CLIENT_NAME = client
 
-INCLUDE_PATH = -I./include/ -I./lib/libft/includes
+INCLUDE_PATH = -I./include \
+				-I./lib/libft/includes 
 LIBFT_DIR = ./lib/libft
 LIB = -L$(LIBFT_DIR) -lft
 FLAGS = -Wall -Werror -Wextra
@@ -10,7 +11,9 @@ SRC_PATH = ./src
 SERVER_SRC_FILES =	main.c \
 					ft_init.c \
 					ft_prompt.c \
-					ft_check_arg.c
+					ft_check_arg.c \
+					ft_client.c \
+					ft_command.c
 CLIENT_SRC_FILES =	main.c
 COMMON_SRC_FILES = 
 
