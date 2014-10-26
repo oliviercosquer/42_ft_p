@@ -6,13 +6,13 @@
 /*   By: olivier <olivier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/10/26 02:52:37 by ocosquer          #+#    #+#             */
-/*   Updated: 2014/10/26 07:20:30 by olivier          ###   ########.fr       */
+/*   Updated: 2014/10/26 08:39:17 by olivier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_p_server.h>
+#include <ft_p_client.h>
 
-int		ft_init_server(int port)
+int		ft_init_client(char *addr, int port)
 {
 	int					sock;
 	struct protoent		*protocol;
@@ -27,7 +27,7 @@ int		ft_init_server(int port)
 		{
 			sin.sin_family = AF_INET;
 			sin.sin_port = htons(port);
-			sin.sin_addr.s_addr = INADDR_ANY;
+			sin.sin_addr.s_addr = inet_addr(addr);
 			bind_ret = bind(sock, (const struct sockaddr *)&sin, sizeof(sin));
 			if (bind_ret == 0)
 			{

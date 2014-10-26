@@ -13,9 +13,10 @@ SERVER_SRC_FILES =	main.c \
 					ft_prompt.c \
 					ft_check_arg.c \
 					ft_client.c \
-					ft_command.c
+					ft_command.c \
+					ft_command_ls.c
 CLIENT_SRC_FILES =	main.c
-COMMON_SRC_FILES = 
+COMMON_SRC_FILES =  ft_tools.c
 
 SERVER_FILES = $(addprefix $(SRC_PATH)/server/,$(SERVER_SRC_FILES))
 CLIENT_FILES = $(addprefix $(SRC_PATH)/client/,$(CLIENT_SRC_FILES))

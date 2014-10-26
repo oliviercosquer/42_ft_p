@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ocosquer <ocosquer@student.42.fr>          +#+  +:+       +#+        */
+/*   By: olivier <olivier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/10/26 02:52:37 by ocosquer          #+#    #+#             */
-/*   Updated: 2014/10/26 02:57:14 by ocosquer         ###   ########.fr       */
+/*   Updated: 2014/10/26 12:31:10 by olivier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,16 @@ int		main(int argc, char **argv)
 			{
 				pid = fork();
 				if (pid == 0)
+				{
+					ft_putstr("New client connection from: ");
+					ft_putstr(inet_ntoa(client->sin.sin_addr));
+					ft_putstr(":");
+					ft_putnbr(ntohs(client->sin.sin_port));
+					ft_putstr("\n");
 					ft_handle_client(client);
+					ft_putstr("Client close connection\n");
+					exit(0);
+				}
 			}
 		}
 		close(sock);

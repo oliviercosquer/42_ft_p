@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_p.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ocosquer <ocosquer@student.42.fr>          +#+  +:+       +#+        */
+/*   By: olivier <olivier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/10/26 02:52:25 by ocosquer          #+#    #+#             */
-/*   Updated: 2014/10/26 02:59:44 by ocosquer         ###   ########.fr       */
+/*   Updated: 2014/10/26 12:16:07 by olivier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,11 @@
 # include <netdb.h>
 # include <netinet/in.h>
 # include <arpa/inet.h>
+# include <fcntl.h>
+# include <sys/time.h>
+# include <sys/resource.h>
+# include <sys/wait.h>
 
+char	*ft_strjoin_free(char **s1, char *s2);
+int		ft_wait(int pid, int options);
 #endif
